@@ -23,17 +23,18 @@ daria = {
 emps = [ivan,daria]
 
 #обратиться к элементу age, провести проверку, если проходит проверку -  печать имени из emps
-if emps[0]['children'][0]['age'] >= 18:
-    print(emps[0]['name'])
-else:
-    if emps[0]['children'][1]['age'] >= 18:
-        print(emps[0]['name'])
-    else:
-        if emps[1]['children'][0]['age'] >=18:
-            print(emps[1]['name'])
-        else:
-            if emps[1]['children'][1]['age'] >=18:
-                print(emps[1]['name'])
+#empsnames = [emps[0]['name'], emps[1]['name']]
+#filter = []
+#for emp in empsnames:
+#    if emps[0]['children'][0]['age'] >= 18:
+#        filter.append(emp)
+#    elif emps[0]['children'][1]['age'] >= 18:
+#        filter.append(emp)
+#    elif emps[1]['children'][0]['age'] >= 18:
+#        filter.append(emp)
+#    elif emps[1]['children'][1]['age'] >= 18:
+#        filter.append(emp)
+#print(filter)
 
 
 
@@ -64,3 +65,28 @@ else:
 #print(ivan.keys())
 #for key, value in daria.items():
     #print(key, value)
+
+filtered = []
+for emp in emps:
+    for child in emp['children']:
+         if child["age"] > 18:
+             filtered.append(emp)
+         break
+
+fullfiltered =()
+if filtered[0]==emps[0]:
+    fullfiltered = (emps[0]['name'])
+if filtered[0] == emps[1]:
+    fullfiltered = (emps[1]['name'])
+print(fullfiltered)
+#fullfiltered = ()
+#if filtered[0] == emps[1]:
+#    fullfiltered = (emps[1]['name'])
+#if filtered[1] == emps[1]:
+#   fullfiltered = (emps[1]['name'])
+
+#print(fullfiltered)
+
+
+#print(map(fullfiltered.get('name'), filtered))
+#print(list(map(lambda x: x.get('name'), filtered)))
